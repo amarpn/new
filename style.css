@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.myGame {
+    height: 100vh;
+}
+
+canvas {
+    max-width: 100%;
+    cursor: url("/assest/crosshair.png") ,auto;
+}
+/* Scordeboard
+ */
+.scoreBoard {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font: 600 1.2vmax "Franklin Gothic Medium";
+    color: white;
+    display: none;
+}
+/* Form */
+
+form {
+    background-color: rgba(255, 255, 255, 0.158);
+    height: 60vh;
+    width: 60vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+form>select,
+form select option {
+    padding: 2vmax;
+    width: 20vw;
+    text-align: center;
+    font-size: 1.4vmax;
+    font-family: 'Caveat', cursive;
+    font-family: 'Roboto Slab', serif;
+    font-weight:800;
+    outline: none;
+    transition: all 0.5s;
+    border: none;
+}
+
+form>input {
+    margin: 2vmax;
+    padding: 2vmax;
+    width: 20vw;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: all 0.5s;
+    background-color: rgb(122, 27, 114);
+    font-weight: 800;
+    font-size: 1.4vmax;
+    font-family: cursive;
+    outline: none;
+}
+
+form>select:hover {
+    box-shadow: 0 0 10px white;
+}
+
+form>input:hover {
+    background-color: rgb(146, 59, 148);
+    box-shadow: 0 0 10px white;
+}
+
+.gameover {
+    background-color: rgba(122, 122, 122, 0.041);
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    height: 100vh;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameover>button {
+    padding: 1vmax;
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+    width: 10vw;
+    background-color: white;
+    font: 900 1.1vmax cursive;
+    transition: all 0.5s;
+}
+
+.gameover>button:hover {
+    background-color: rgb(30, 30, 34);
+    color: white;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.gameover>div {
+    margin: 2vmax;
+    color: white;
+    font: 600 1.2vmax cursive;
+}
+
+#typing-demo {
+    width: 23ch;
+    animation: typing 2s steps(23), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    padding-top: 2vw;
+    letter-spacing: .08em;
+    margin: 0 auto;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+/*popup  */
+.container {
+    height: auto;
+    max-height: 60vh;
+    width: auto;
+    max-width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 2rem;
+    background-color: rgba(255, 255, 255,0.9);
+    border-radius: 10px;
+    display: none;
+}
+
+
+.container p {
+    font-size: 1.5rem;
+    font-family: 'Caveat', cursive;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 800;
+    text-align: justify;
+    color: #000000;
+}
+
+.container>button {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.7rem;
+    width: 200px;
+    background-color: rgb(122, 27, 114);
+    border: 0px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+.container>button:hover
+{
+    box-shadow: 0 0 10px white;
+}
+
+.fa-heart
+{
+    font-size:48px;
+    color:red;
+
+}
+/* Media Query */
+
+/* For 1024 Resolution */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .container {
+            height: auto;
+            max-height: 50vh;
+            width: auto;
+            max-width: 40vw;
+        }
+    
+        .container p {
+            font-size: 2vw;
+        }
+    
+        .container>button {
+    
+            width: 30vw;
+    
+        }
+    
+        .fa {
+            font-size: 28px;
+        }
+    
+        #typing-demo {
+            padding-top: 2vh;
+            margin: 0 auto;
+        }
+    
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+        .container {
+            height: auto;
+            width: auto;
+           max-height: 50vh;
+           max-width: 50vw;
+        }
+        .container p {
+            font-size: 4vw;
+        }
+        .container>button {
+
+            width: 40vw;
+            
+        }
+        .fa
+        {
+            font-size: 28px;
+        }
+        #typing-demo
+        {
+            padding-top: 5vh;
+            letter-spacing: 0;
+            margin: 0 auto;
+            
+        }
+}
